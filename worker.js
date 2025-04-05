@@ -114,18 +114,18 @@ export default {
     if (url.pathname === '/robots.txt') {
       let robotContent = 'User-agent: *\n';
       robotContent += 'Disallow: /api/\n';
-      robotContent += 'Disallow: /blog/';
-      robotContent += 'Disallow: /community/';
-      robotContent += 'Disallow: /customers/';
-      robotContent += 'Disallow: /guides/';
-      robotContent += 'Disallow: /help/';
-      robotContent += 'Disallow: /pages/';
-      robotContent += 'Disallow: /releases/';
-      robotContent += 'Disallow: /startups/';
-      robotContent += 'Disallow: /templates/';
-      robotContent += 'Disallow: /webinars/';
-      robotContent += 'Disallow: /wikis/';
-      robotContent += 'Disallow: /wiki/';
+      robotContent += 'Disallow: /blog/\n';
+      robotContent += 'Disallow: /community/\n';
+      robotContent += 'Disallow: /customers/\n';
+      robotContent += 'Disallow: /guides/\n';
+      robotContent += 'Disallow: /help/\n';
+      robotContent += 'Disallow: /pages/\n';
+      robotContent += 'Disallow: /releases/\n';
+      robotContent += 'Disallow: /startups/\n';
+      robotContent += 'Disallow: /templates/\n';
+      robotContent += 'Disallow: /webinars/\n';
+      robotContent += 'Disallow: /wikis/\n';
+      robotContent += 'Disallow: /wiki/\n';
       robotContent += 'Sitemap: https://' + MY_DOMAIN + '/sitemap.xml';
       return new Response(robotContent);
     }
@@ -289,7 +289,7 @@ export default {
           || mobileNav && mobileNav.firstChild) {
           redirected = true;
           updateSlug();
-          addDarkModeButton(nav ? 'web' : 'mobile');
+          //addDarkModeButton(nav ? 'web' : 'mobile');
           const onpopstate = window.onpopstate;
           window.onpopstate = function() {
             if (slugs.includes(getSlug())) {

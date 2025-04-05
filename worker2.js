@@ -27,7 +27,8 @@
   /* Step 3: enter your page title and description for SEO purposes */
   const PAGE_TITLE = 'Top of the South latin dance community';
   const PAGE_DESCRIPTION = 'Latin dance community at the Top of the South Island of New Zealand (Nelson, Richmond, Motueka)';
-  
+  const SITE_FAVICON = 'https://img.notionusercontent.com/s3/prod-files-secure%2Fde77fef8-578e-466b-9614-d43dd6f38aea%2F1e25e241-c6b2-400d-ad2d-273122cc215e%2Fwhite-caucasian-man-and-woman--couple-dancing-together.png/size/w=250?exp=1743297246&sig=y4xk_C_5EXtTPotwyNN5eJK4Yv5wsnM6PZXemKE3bUY&id=147eded2-6d10-802d-b350-fc97991452cd&table=block&userId=147d872b-594c-810e-aeca-0002144c36b3';
+
   /* Step 4: enter a Google Font name, you can choose from https://fonts.google.com */
   const GOOGLE_FONT = 'Funnel Sans';
   
@@ -92,12 +93,30 @@
     let url = new URL(request.url);
     url.hostname = MY_NOTION_SITE;
     if (url.pathname === '/robots.txt') {
-      return new Response('Sitemap: https://' + MY_DOMAIN + '/sitemap.xml');
+      let robotContent = 'User-agent: *\n';
+      robotContent += 'Disallow: /api/\n';
+      robotContent += 'Disallow: /blog/\n';
+      robotContent += 'Disallow: /community/\n';
+      robotContent += 'Disallow: /customers/\n';
+      robotContent += 'Disallow: /guides/\n';
+      robotContent += 'Disallow: /help/\n';
+      robotContent += 'Disallow: /pages/\n';
+      robotContent += 'Disallow: /releases/\n';
+      robotContent += 'Disallow: /startups/\n';
+      robotContent += 'Disallow: /templates/\n';
+      robotContent += 'Disallow: /webinars/\n';
+      robotContent += 'Disallow: /wikis/\n';
+      robotContent += 'Disallow: /wiki/\n';
+      robotContent += 'Sitemap: https://' + MY_DOMAIN + '/sitemap.xml';
+      return new Response(robotContent);
     }
     if (url.pathname === '/sitemap.xml') {
       let response = new Response(generateSitemap());
       response.headers.set('content-type', 'application/xml');
       return response;
+    }
+    if (url.pathname === '/favicon.ico') {
+      return Response.redirect(SITE_FAVICON, 302);
     }
     let response;
     if (url.pathname.startsWith('/app') && url.pathname.endsWith('js')) {
@@ -250,13 +269,15 @@
           || mobileNav && mobileNav.firstChild) {
           redirected = true;
           updateSlug();
-          addDarkModeButton(nav ? 'web' : 'mobile');
+          //addDarkModeButton(nav ? 'web' : 'mobile');
           const onpopstate = window.onpopstate;
           window.onpopstate = function() {
             if (slugs.includes(getSlug())) {
               const page = SLUG_TO_PAGE[getSlug()];
               if (page) {
-                history.replaceState(history.state, 'bypass', '/' + page);
+                //history.replaceState(history.state, 'bypass', '/' + page);
+                window.location.href = '/' + page; 
+                return;
               }
             }
             onpopstate.apply(this, [].slice.call(arguments));
