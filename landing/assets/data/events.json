@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Easter Social Dance",
+    "tags": ["socials"],
+    "dateFrom": "2025-04-20T19:00:00",
+    "dateTo": "2025-04-20T21:00:00",
+    "location": {
+      "placeName": "Stoke Indoor Bowls Club",
+      "address": "206 Songer Street, Stoke, Nelson 7011",
+      "mapUrl": "https://maps.app.goo.gl/mBFrz8XAqwHaUoUX8"
+    },
+    "imagePath": "./assets/img/events/2025_easter_social_logo.jpg",
+    "website": "https://www.facebook.com/events/2594650020744078/",
+    "content": [
+      "This will be our usual social dance (pair dancing - salsa, bachata), but we’re also adding something a little extra for Easter fun:",
+      "Rueda de Casino (Salsa) and Rueda de Bachata (with new moves)",
+      "It's a great chance to practice what you've learned, try something new, and share some laughs.",
+      "Entry is $10 - all levels welcome, no partner needed (we rotate throughout the night). Whether you're new or experienced, come as you are!",
+      "Bring your Easter spirit, your dancing shoes, and let's make it a fun one.",
+      "See you on the dance floor!"
+    ]
+  },
+  {
+    "title": "Latin dance event in September",
+    "tags": ["workshop"],
+    "dateFrom": "2025-09-05T11:00:00",
+    "dateTo": "2025-09-05T19:00:00",
+    "location": {
+      "placeName": "(To be defined)",
+      "address": "",
+      "mapUrl": ""
+    },
+    "imagePath": "./assets/img/events/2025_september_workshop_logo.png",
+    "website": "",
+    "content": [
+      "Mark your calendars and stay tuned for details:",
+      "📅 September 2025 (exact date still to be confirmed)",
+      "For this event, we’re focusing on followers and bringing in amazing female instructors to dive deep into lady styling, technique, and connection. Whether you're a seasoned dancer or just starting out, this will be a fantastic opportunity to grow, refine your movements, and gain confidence on the dance floor.",
+      "More details coming soon—stay tuned! 🔥✨ If you're interested, let us know in the comments or send us a message."
+    ]
+  }
+]

@@ -115,7 +115,7 @@ $(function () {
 
     //=====  WOW active
 
-    new WOW().init();
+    //new WOW().init();
 
 
 
